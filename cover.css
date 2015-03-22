@@ -65,6 +65,7 @@ body {
 .masthead-brand {
   margin-top: 10px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .masthead-nav > li {
@@ -136,7 +137,6 @@ body {
   /* Pull out the header and footer */
   .masthead {
     position: fixed;
-    text-align: center;
     top: 0;
   }
   .mastfoot {
