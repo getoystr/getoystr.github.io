@@ -136,6 +136,7 @@ body {
   /* Pull out the header and footer */
   .masthead {
     position: fixed;
+    text-align: center;
     top: 0;
   }
   .mastfoot {
