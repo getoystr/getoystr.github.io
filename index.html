@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <title>OYSTR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link rel="profile" href="http://gmpg.org/xfn/11" />
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  
+ 
+ 
+  <header>
+    <div class="container text-center">
+      <a href="http://www.getoystr.com"><img src="img/oystrlogo.png" alt="getoystr.com"></a>
+      <h1>We Democratize Access!</h1>
+    </div>
+  </header>
+  <div id="content">
+    <div class="container">
+      <div id="register-container" class="section">
+        <div class="row">
+          <div id="register-text-container">
+            <h2 id="register-title">What we do!</h2>
+            <p id="register-subtitle">We're passionate about democratizing access. We believe that we have been lucky to be where we are and to be able to do what we are doing. We don't think anyone's ability to realize their potential should be limited by who they know. We are OYSTR, and we believe that the world can be everyone's oyster. Come be part of our movement to change lives.</p>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <form name="formcontact" action="signup.php" id="formcontact" method="post">
+                  <input type="hidden" name="hdnContact" id="hdnContact" />
+                  <input type="hidden" name="us" id="us" value="" />
+                  <div class="complete">
+                          <h2>Complete the form to get more information:</h2>
+                          <div class="succbr" style="display: none">
+                    <span class="succbrErrmsg" id="alertErrMsg"></span>
+                    </div>
+                                        
+                    <br style="clear: both">
+                      
+             
+                    <div class="form-group">
+                      <input class="txtbox alphaonly form-control" type="text" value="" placeholder="First Name" name="fName" id="txtName" aria-required="true" required/>
+                    </div>
+                    <div class="form-group">
+                      <input class="txtbox alphaonly form-control" type="text" value="" placeholder="Last Name" name="lName" id="txtName" aria-required="true" required/>
+                    </div>
+                     <div class="form-group">
+                      <input class="txtbox alphaonly form-control" type="text" value="" placeholder="School" name="schoolName" id="txtName" aria-required="true" required/>
+                    </div>
+                    <div class="form-group">
+                      <input class="numbox numberonly form-control" type="number" value="" placeholder="Year of Graduation" name="gradYear" id="gradYear" aria-required="true" required/>
+                    </div>
+                    <div class="form-group">
+                      <input class="txtbox form-control" type="email" placeholder="Email " value="" name="email" id="txtEmail" aria-required="true" required/>
+                    </div>
+                    <div class="form-group">
+                      <input class="txtbox alphaonly form-control" type="text" value="" placeholder="City Of Origin" name="cityName" id="txtName" aria-required="true" required/>
+                    </div>
+                    <div class="form-group">
+                      <input class="numbox numberonly form-control" type="number" value="" placeholder="High School Year of Graduation" name="hSchoolYear" id="gradYear" aria-required="true" required/>
+                    </div>
+                    <div class="form-group">
+                      <textarea class="form-control" rows="1" placeholder="Hobbies - Upto 3" id="txtArea" name="hobbies"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                      <textarea class="form-control" rows="1" placeholder="Sports - Upto 3" id="txtArea" name="sports"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                      <textarea class="form-control" rows="1" placeholder="Languages - Upto 5" id="txtArea" name="languages"></textarea>
+                    </div>
+                    
+                     <div class="form-group">
+                     	<textarea class="form-control" rows="3" placeholder="Interests" id="txtArea" name="interests"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                      <input class="txtbox alphaonly form-control" type="password" placeholder="Password" value="" name="txtPassword" id="txtPassword" aria-required="true" required/>
+                    </div>
+                    
+                          
+                        
+                    <input type="submit" onClick="return frmRegisterVal();" class="btn submit text-center" value="Join OYSTR">
+                </div>
+            </form>
+          </div>
+          
+          
+    <script type="text/javascript">
+    function frmRegisterVal () {
+      
+        $(".succbr").show();
+        $(".succbr1").html('');
+        $(".succgr").html('');
+
+        $("#testId").html('');
+        
+          $("#alertErrMsg").html('');
+        //------------------------------------------------Name
+        if($("#txtName").val()=="")     
+        {	
+        $("#alertErrMsg").html("Please enter your name");				
+        $("#txtName").focus();
+        return false; 
+        }
+        var firstLetter=$("#txtName").val().substring(0,1)	
+        if(firstLetter==' ')
+        {	
+        $("#alertErrMsg").html("First letter should not be blank");				
+        $("#txtName").focus();
+        return false;			
+        }
+
+        if(!$("#txtName").val().match(/^[ a-z A-z 0-9]+$/) )   
+        {	
+        $("#alertErrMsg").html("Please enter your name");				
+        $("#txtName").focus();
+        return false; 
+        }
+        if($("#txtName").val().length>25)
+        {
+        $("#alertErrMsg").html("Please enter your name");
+        $("#txtName").focus();
+        return false;
+        }	
+        
+        if($("#txtName").val().length<2)
+        {
+        $("#alertErrMsg").html("Please enter your name (more than 1 character)");
+        $("#txtName").focus();
+        return false;
+        }	
+        
+        if($("#txtPassword").val().length == 0) {
+          $("#alertErrMsg").html("Please enter confirm password");
+          $("#txtName").focus();
+          return false;
+        }
+        
+
+
+        //$("#alertErrMsg1").html('');
+        //------------------------------------------------Name
+        if($("#txtEmail").val()=="")     
+        {	
+        $("#alertErrMsg").html("Please enter your email address");				
+        $("#txtEmail").focus();
+        return false; 
+        }
+        var firstLetter=$("#txtEmail").val().substring(0,1)	
+        if(firstLetter==' ')
+        {	
+        $("#alertErrMsg").html("First letter should not be blank");				
+        $("#txtEmail").focus();
+        return false;			
+        }
+        if (!$("#txtEmail").val().match(/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/)) {
+        $("#alertErrMsg").html("Please enter a valid email address");
+        $("#txtEmail").focus();
+        return false;
+        }
+        
+
+        $("#hdnContact").val('1');
+        $("#formcontact").submit();
+      }
+  //Popup 		
+    jQuery(function ($) {
+      $('#basic-modal1').click(function (e) { 
+      $('#basic-modal-content_topics').modal();
+      return false;
+      });
+    });	
+    
+  //popup validation 
+    function sentContactUs()
+    {
+      $("#showMsgDivId").html("");
+      // Gigs Category
+      if($("#txtFullName").val()=="")     
+          {	
+            $("#showMsgDivId").html("Please enter your full name");		
+            $("#txtFullName").focus();
+            return false; 
+          }
+      var firstLetter=$("#txtFullName").val().substring(0,1)	
+        if(firstLetter==' ')
+          {		
+                    $("#showMsgDivId").html("First letter should not be blank");
+            $("#txtFullName").focus();
+            return false;			
+           }
+      //---------------------------------Gigs Title validation
+        if($("#txtEmailp").val()=="")     
+          {	
+            $("#showMsgDivId").html("Please enter your email address");	
+            $("#txtEmailp").focus();
+            return false; 
+          }
+        var firstLetter=$("#txtEmailp").val().substring(0,1)	
+        if(firstLetter==' ')
+          {		
+            $("#showMsgDivId").html("First letter should not be blank");
+            $("#txtEmailp").focus();
+            return false;			
+          }
+          if(!$("#txtEmailp").val().match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/))
+          {
+              $("#showMsgDivId").html("Please enter a valid email address");
+            $("#txtEmailp").focus();
+            return false;		
+          }
+           
+        //Gigs Description
+        if($("#txtDesc").val()=="")     
+          {	
+            $("#showMsgDivId").html("Please enter your message");		
+            $("#txtDesc").focus();
+            return false; 
+          }
+        var firstLetter=$("#txtDesc").val().substring(0,1)	
+        if(firstLetter==' ')
+          {		
+            $("#showMsgDivId").html("First letter should not be blank");	
+            $("#txtDesc").focus();
+            return false;			
+           }
+           
+           $("#send").val("Loading..").css("opacity",0.7);
+           
+          $.ajax({
+            type: 'POST',
+            url: 'sendmailfromindex.php',
+            data: $("#frmContactUs").serialize(),
+            success: function(data) {
+              var res = $.trim(data);
+              
+              
+              if(res == "sent") {
+                 $("#frmContactUs").fadeOut("fast", function(){
+                 $(this).before("<p class='sucMes'><a></a><strong>Success! Your message has been sent successfully, thanks :)</strong></p>");
+                 setTimeout('closepopupFun()', 5000);
+                });
+                
+                $("#showMsgDivId").html("");
+                $("#txtFullName").val('');
+                $("#txtEmailp").val('');
+                $("#txtDesc").val('');
+                $("#send").val("Submit").css("opacity",1);
+                $("#showMsgDivId").html("");
+              }
+              else{
+                $(".errEmail").html("Something wrong please try again");
+                $("#send").val("Submit").css("opacity",1);
+              }
+            }
+          });
+      }
+      function closepopupFun(){
+       $('.lightbox').click();
+      }
+
+  $('.alphaonly').bind('keyup blur',function(){ 
+      $(this).val( $(this).val().replace(/[^a-zA-Z._0-9]/g,'') ); }
+  );	
+  
+  $("#video-container iframe").hide();
+
+    function playVideo() {
+      $("#video-box").remove();
+      var video = $("#video-container iframe");
+      $(video).show();
+      $(video).attr('src', $(video).attr('src') + '&amp;autoplay=1');
+    }
+  </script>
+
+</body>
+</html>
