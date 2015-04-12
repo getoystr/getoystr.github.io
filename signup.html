@@ -12,20 +12,21 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   
-   
-  
-  
-        
-        
+     
+    <div id="content">
+    <div class="container">
+      <div id="register-container" class="section">
+    
         <div class="row">
           <div class="col-md-6">
-            <form name="formcontact" action="signup.php" id="formcontact" method="post">
-                  
+            <form action="signup.php" method="post">
+            	         
                   <div class="complete">
                           <h2>Complete the form to get more information:</h2>
                           <div class="succbr" style="display: none">
                     <span class="succbrErrmsg" id="alertErrMsg"></span>
                     </div>
+                 </div>
                                         
                     <br style="clear: both">
                       
@@ -79,93 +80,28 @@
                     -->
                           
                         
-                    <input type="submit" onClick="return frmRegisterVal();" class="btn submit text-center" value="Join OYSTR">
+                    <input type="submit" onClick="return frmRegisterVal();" class="btn submit text-center" value="Submit">
                 </div>
             </form>
           </div>
+       
           
           
           
     <script type="text/javascript">
     function frmRegisterVal () {
-      
-        $(".succbr").show();
-        $(".succbr1").html('');
-        $(".succgr").html('');
-
-        $("#testId").html('');
-        
-          $("#alertErrMsg").html('');
-        //------------------------------------------------Name
-        if($("#txtName").val()=="")     
-        {	
-        $("#alertErrMsg").html("Please enter your name");				
-        $("#txtName").focus();
-        return false; 
-        }
-        var firstLetter=$("#txtName").val().substring(0,1)	
-        if(firstLetter==' ')
-        {	
-        $("#alertErrMsg").html("First letter should not be blank");				
-        $("#txtName").focus();
-        return false;			
-        }
-
-        if(!$("#txtName").val().match(/^[ a-z A-z 0-9]+$/) )   
-        {	
-        $("#alertErrMsg").html("Please enter your name");				
-        $("#txtName").focus();
-        return false; 
-        }
-        if($("#txtName").val().length>25)
-        {
-        $("#alertErrMsg").html("Please enter your name");
-        $("#txtName").focus();
-        return false;
-        }	
-        
-        if($("#txtName").val().length<2)
-        {
-        $("#alertErrMsg").html("Please enter your name (more than 1 character)");
-        $("#txtName").focus();
-        return false;
-        }	
-        
-        if($("#txtPassword").val().length == 0) {
-          $("#alertErrMsg").html("Please enter confirm password");
-          $("#txtName").focus();
-          return false;
-        }
-        
-
-
-        //$("#alertErrMsg1").html('');
-        //------------------------------------------------Name
-        if($("#txtEmail").val()=="")     
-        {	
-        $("#alertErrMsg").html("Please enter your email address");				
-        $("#txtEmail").focus();
-        return false; 
-        }
-        var firstLetter=$("#txtEmail").val().substring(0,1)	
-        if(firstLetter==' ')
-        {	
-        $("#alertErrMsg").html("First letter should not be blank");				
-        $("#txtEmail").focus();
-        return false;			
-        }
-        if (!$("#txtEmail").val().match(/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/)) {
-        $("#alertErrMsg").html("Please enter a valid email address");
-        $("#txtEmail").focus();
-        return false;
-        }
-        
-
-        $("#hdnContact").val('1');
-        $("#formcontact").submit();
       }
-  
+ //Popup 		
+    jQuery(function ($) {
+      $('#basic-modal1').click(function (e) { 
+      $('#basic-modal-content_topics').modal();
+      return false;
+      });
+    });
+    $('.alphaonly').bind('keyup blur',function(){ 
+      $(this).val( $(this).val().replace(/[^a-zA-Z._0-9]/g,'') ); }
+  );	
+    
   </script>
 
-</body>
 </html>
